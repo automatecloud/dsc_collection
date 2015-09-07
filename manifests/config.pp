@@ -20,7 +20,5 @@ class dsc_collection::config (
   dsc::lcm_config { 'disable lcm':
     refresh_mode => $refresh_mode,
   }
-  reboot { 'after':
-    subscribe => Package['powershell'],
-  }
+
 }

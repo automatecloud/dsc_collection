@@ -12,6 +12,9 @@ class dsc_collection::fourthcoffee (
     $zipuri = "${sourcerepo}/${zipname}"
     $zipfile = "${zippath}\\${zipname}"
 
+    reboot { 'before':
+      when => pending,
+    }
     # Install the IIS role
     dsc_windowsfeature { 'IIS':
       dsc_ensure => 'present',
