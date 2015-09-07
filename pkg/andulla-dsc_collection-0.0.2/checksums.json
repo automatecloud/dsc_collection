@@ -1,0 +1,13 @@
+{
+  "Gemfile": "dbc1a15e3a264c03878028240cfc5d89",
+  "LICENSE": "fa818a259cbed7ce8bc2a22d35a464fc",
+  "README.md": "907b8b148390f195ca94b0de75c5e50b",
+  "Rakefile": "20b80e526e351a74df2001f504e756d2",
+  "manifests/config.pp": "cb04f2b2703b330b72132a2a98ed9f07",
+  "manifests/fourthcoffee.pp": "7acb41895254465b9d3ce1a7dc4c9440",
+  "manifests/init.pp": "6cc1df474191afb8972229ff198454c5",
+  "metadata.json": "6626a69064af08380dcb0cb0da3b0828",
+  "spec/classes/init_spec.rb": "80764bccabe3b6072ff82e89ee95db40",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "tests/init.pp": "62244c4b0fcb96d6772c80a31b9f7e05"
+}

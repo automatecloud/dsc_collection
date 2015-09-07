@@ -27,12 +27,6 @@ class dsc_collection::fourthcoffee (
       dsc_name   => 'Web-Asp-Net45',
     } ->
 
-    # Install IIS Web Management Console
-    dsc_windowsfeature { 'IIS Management Console':
-      dsc_ensure => 'present',
-      dsc_name   => 'Web-Mgmt-Console',
-    } ->
-
     # Stop an existing website (default)
     dsc_xwebsite { 'Stop DefaultSite':
         dsc_ensure       => 'present',
