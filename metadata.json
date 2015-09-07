@@ -2,13 +2,16 @@
   "name": "andulla-dsc_collection",
   "version": "0.0.1",
   "author": "andulla",
-  "summary": "Collection of DSC examples how to reuse existing DSC configurations with puppet",
+  "summary": "Collection of DSC examples how to use existing DSC configurations with puppet",
   "license": "Apache 2.0",
   "source": "https://github.com/Andulla/dsc_collection.git",
   "project_page": "https://github.com/Andulla/dsc_collection",
   "issues_url": "https://github.com/Andulla/dsc_collection/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.2",
+      "name":"chocolatey-chocolatey","version_requirement":">= 1.0.0",
+      "name":"puppetlabs-dsc","version_requirement":">= 0.8.1",
+      "name":"puppetlabs-reboot","version_requirement":">= 0.8.1",
+    }
   ]
 }
-
