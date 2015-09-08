@@ -36,6 +36,12 @@ The module configures the following:
 
 After successfully using the config module you can start to use the following test classes:
 * fourthcoffee.pp - Installs IIS, .NET ASP 4.5, Disables the Default Webside and configures a new Webside with fourthcoffee application.
+* archive.pp - Example how to extract archive zip file
+* environment.pp - Example how to configure system environment variable.
+* package.pp - Example how to install software with package resource.
+* registry.pp - Example how to manage different Registry keys and values.
+* service.pp - Example how to manage a service
+* userandgroup.pp - Example how to manage a local user and a local group.
 
 ## Usage
 
@@ -51,8 +57,8 @@ After successfully using the config module you can start to use the following te
 
 ## Development
 
-Please create now issues at the official GitHub repo or send me pull requests to add additional examples/features.
+Please create new issues at the official GitHub repo or send me pull requests to add additional examples/features.
 
 ## Release Notes/Contributors/Etc **Optional**
 
-Please use this module with caution as this is Version 0.0.1!
+Please use this module with caution as it is 0.x.x Release!
