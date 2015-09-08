@@ -43,22 +43,16 @@ After successfully using the config module you can start to use the following te
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+...
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+...
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+Please create now issues at the official GitHub repo or send me pull requests to add additional examples/features.
 
 ## Release Notes/Contributors/Etc **Optional**
 
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+Please use this module with caution as this is Version 0.0.1!
