@@ -45,7 +45,7 @@ After successfully using the config module you can start to use the following te
 
 ## Usage
 
-...
+First classify your nodes with the config class to be sure all necessary configurations are applied before using one of the example classes.
 
 ## Reference
 
