@@ -8,6 +8,6 @@
   "project_page": "https://github.com/Andulla/dsc_collection",
   "issues_url": "https://github.com/Andulla/dsc_collection/issues",
   "dependencies": [
-    {"name":"puppetlabs-dsc","version_requirement":">= 0.8.1"},
+    {"name":"puppetlabs-dsc","version_requirement":">= 0.8.1"}
   ]
 }
