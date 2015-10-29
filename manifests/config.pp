@@ -10,12 +10,16 @@ class dsc_collection::config (
       ensure => 'running',
       enable => true,
     }
-    # Install package powershell with chocolatey
-    if $chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
-      notify { "Package is already installed":}
+    # Install package powershell with chocolatey.
+    # And workaround for chocolatey provider as it will identify PowerShell
+    # as not installed.
+    if $::chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
+      #Powershell already installed.
+      #notify { "Package is already installed":}
     }
     else
     {
+      #Not install will use package to install
       package { 'powershell':
         ensure          => installed,
         provider        => 'chocolatey',
