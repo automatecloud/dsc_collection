@@ -4,14 +4,12 @@
 class dsc_collection::webpage (
   $websitename = 'MyWebPage',
   $zipname = 'MyWebpageZipFile.zip',
-  $zipsourcefolder = 'c:\tmp',
+  $zipfolder = 'c:\tmp',
   $destinationpath = 'C:\inetpub\MyWebPage',
   $defaultwebsitepath = 'C:\inetpub\wwwroot',
-  $zippath = 'C:\tmp'
   ){
-
-    $ziplocation = "${zipsourcefolder}\\${zipname}"
-    $zipfile = "${zippath}\\${zipname}"
+    
+    $zipfile = "${zipfolder}\\${zipname}"
 
     # Install the IIS role
     dsc_windowsfeature { 'IIS':
@@ -37,13 +35,6 @@ class dsc_collection::webpage (
         dsc_name         => 'Default Web Site',
         dsc_state        => 'Stopped',
         dsc_physicalpath => $defaultwebsitepath,
-    } ->
-
-    # Create tmp folder
-    dsc_file { 'tmp folder':
-      dsc_ensure          => 'present',
-      dsc_type            => 'Directory',
-      dsc_destinationpath => $zippath,
     } ->
 
     # Extract the website content
