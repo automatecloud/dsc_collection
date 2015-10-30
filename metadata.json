@@ -1,5 +1,5 @@
 {
-  "name": "andulla-vmware_dsc_collection",
+  "name": "andulla-dsc_collection",
   "version": "0.1.2",
   "author": "andulla",
   "summary": "Collection of DSC examples how to use existing DSC configurations with puppet",
@@ -14,6 +14,6 @@
     }
    ],
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 4.9.0"}
+    {"name":"puppetlabs-dsc","version_requirement":">= 0.8.1 <2.0.0"}
   ]
 }
