@@ -27,9 +27,10 @@ The modules shows the easy integration of existing PowerShell DSC Configurations
 
 The module configures the following:
 * Makes sure the Windows Update Service is up and running
-* Makes sure the Windows Management Framework and PowerShell v5 - Preview is installed
+* Makes sure the Windows Management Framework and PowerShell v5 - Preview is installed. Implemented workaround for chocolatey via custom fact chocolatey_packages
 * Configures the LCM refresh_mode as Disabled.
 * Reboots after installation and configurations
+* creates a new custom fact chocolatey_packages with informations about the installed packages via chocolatey.
 
 
 ### Beginning with dsc_collection
@@ -42,6 +43,7 @@ After successfully using the config module you can start to use the following te
 * registry.pp - Example how to manage different Registry keys and values.
 * service.pp - Example how to manage a service
 * userandgroup.pp - Example how to manage a local user and a local group.
+* webpage.pp - Example how to install IIS, .NET ASP 4.5, IIS by installing from a ZIP file available via local or UNC path.
 
 ## Usage
 
