@@ -1,13 +1,19 @@
 {
-  "name": "andulla-dsc_collection",
-  "version": "0.1.1",
+  "name": "andulla-vmware_dsc_collection",
+  "version": "0.1.2",
   "author": "andulla",
   "summary": "Collection of DSC examples how to use existing DSC configurations with puppet",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/Andulla/dsc_collection.git",
   "project_page": "https://github.com/Andulla/dsc_collection",
   "issues_url": "https://github.com/Andulla/dsc_collection/issues",
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"windows",
+    "operatingsystemrelease":[ "2008R2", "2012R2" ]
+    }
+   ],
   "dependencies": [
-    {"name":"puppetlabs-dsc","version_requirement":">= 0.8.1"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 4.9.0"}
   ]
 }
