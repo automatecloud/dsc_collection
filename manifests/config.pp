@@ -7,7 +7,7 @@ class dsc_collection::config (
   # Refresh Mode = Disabled, Pull or Push
   $refresh_mode = 'Disabled'
   ) {
-    if $::kernelmajversion == 6.3 {
+    if $::kernelmajversion == '6.3' {
       service {'wuauserv':
         ensure => 'running',
         enable => true,
@@ -36,7 +36,7 @@ class dsc_collection::config (
       refresh_mode => $refresh_mode,
       }
   }
-  elsif $::kernelmajversion == 6.1 {
+  elsif $::kernelmajversion == '6.1' {
     warning( 'This module does not yet work on Windows Server 2008R2.')
     warning( 'Please download and install the necessary')
     warning( 'Windows Management Framework 5.0 for Windows 2008R2.' )
