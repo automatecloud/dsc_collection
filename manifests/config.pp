@@ -15,26 +15,34 @@ class dsc_collection::config (
       # Install package powershell with chocolatey.
       # And workaround for chocolatey provider
       # as it will identify PowerShell as not installed.
-      if $::chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
-        #Powershell already installed.
-        #notify { "Package is already installed":}
-      }
-      else
+      if $::chocolatey_packages != undef
       {
-        #Not install will use package to install
-        package { 'powershell':
-          ensure          => installed,
-          provider        => 'chocolatey',
-          install_options => ['-pre','-y'],
+        if $::chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
+          #Powershell already installed.
+          #notify { "Package is already installed":}
         }
-        reboot { 'after':
-            subscribe       => Package['powershell'],
+        else
+        {
+          #Not install will use package to install
+          package { 'powershell':
+            ensure          => installed,
+            provider        => 'chocolatey',
+            install_options => ['-pre','-y'],
+          }
+          reboot { 'after':
+              subscribe       => Package['powershell'],
+          }
         }
-      }
-      # Disable local refresh mode
-      dsc::lcm_config { 'disable lcm':
-      refresh_mode => $refresh_mode,
-      }
+        # Disable local refresh mode
+        dsc::lcm_config { 'disable lcm':
+        refresh_mode => $refresh_mode,
+        }
+    }
+    else
+    {
+        warning ('Chocolatey is not installed so far.')
+        warning ('Please make sure you installed Chocolatey')
+    }
   }
   elsif $::kernelmajversion == '6.1' {
     warning( 'This module does not yet work on Windows Server 2008R2.')
