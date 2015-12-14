@@ -35,7 +35,8 @@ class dsc_collection::config (
         }
         # Disable local refresh mode
         dsc::lcm_config { 'disable lcm':
-        refresh_mode => $refresh_mode,
+          refresh_mode => $refresh_mode,
+          require      => Package['powershell'],
         }
     }
     else
