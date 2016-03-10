@@ -44,6 +44,7 @@ After successfully using the config module you can start to use the following te
 * service.pp - Example how to manage a service
 * userandgroup.pp - Example how to manage a local user and a local group.
 * webpage.pp - Example how to install IIS, .NET ASP 4.5, IIS by installing from a ZIP file available via local or UNC path.
+* sharepoint2013.pp - Example how to install Sharepoint 2013 on Windows Server 2008R2.
 
 ## Usage
 
