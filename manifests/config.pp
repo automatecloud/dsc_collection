@@ -46,9 +46,47 @@ class dsc_collection::config (
     }
   }
   elsif $::kernelmajversion == '6.1' {
-    warning( 'This module does not yet work on Windows Server 2008R2.')
-    warning( 'Please download and install the necessary')
-    warning( 'Windows Management Framework 5.0 for Windows 2008R2.' )
+    warning( 'You are using this module with Windows Server 2008R2.')
+    warning( 'Please make sure Service Pack 1 is installed!')
+    # Install package powershell with chocolatey.
+    # And workaround for chocolatey provider
+    # as it will identify PowerShell as not installed.
+    if $::chocolatey_packages != undef
+    {
+      if $::chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
+        #Powershell already installed.
+        #notify { "Package is already installed":}
+      }
+      else
+      {
+        #Not install will use package to install
+        # Need to install .Net 4.5.1 first.
+        package { 'dotnet4.5.1':
+          ensure   => installed,
+          provider => 'chocolatey',
+        }
+
+        package { 'powershell':
+          ensure          => installed,
+          provider        => 'chocolatey',
+          require         => Package['dotnet4.5.1'],
+          install_options => ['-pre','-y'],
+        }
+        reboot { 'after':
+            subscribe       => Package['powershell'],
+        }
+      }
+      # Disable local refresh mode
+      dsc::lcm_config { 'disable lcm':
+        refresh_mode => $refresh_mode,
+        require      => Package['powershell'],
+      }
+    }
+    else
+    {
+      warning ('Chocolatey is not installed so far.')
+      warning ('Please make sure you installed Chocolatey')
+    }
   }
   else {
     warning( 'Your operatingsystem is currently not supported with this module')
