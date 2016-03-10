@@ -19,7 +19,10 @@ class dsc_collection::config (
       {
         if $::chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
           #Powershell already installed.
-          #notify { "Package is already installed":}
+          # Disable local refresh mode
+          dsc::lcm_config { 'disable lcm':
+            refresh_mode => $refresh_mode,
+          }
         }
         else
         {
@@ -32,11 +35,6 @@ class dsc_collection::config (
           reboot { 'after':
               subscribe       => Package['powershell'],
           }
-        }
-        # Disable local refresh mode
-        dsc::lcm_config { 'disable lcm':
-          refresh_mode => $refresh_mode,
-          require      => Package['powershell'],
         }
     }
     else
@@ -55,7 +53,9 @@ class dsc_collection::config (
     {
       if $::chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
         #Powershell already installed.
-        #notify { "Package is already installed":}
+        dsc::lcm_config { 'disable lcm':
+          refresh_mode => $refresh_mode,
+        }
       }
       else
       {
@@ -75,11 +75,6 @@ class dsc_collection::config (
         reboot { 'after':
             subscribe       => Package['powershell'],
         }
-      }
-      # Disable local refresh mode
-      dsc::lcm_config { 'disable lcm':
-        refresh_mode => $refresh_mode,
-        require      => Package['powershell'],
       }
     }
     else
