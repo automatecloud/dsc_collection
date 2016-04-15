@@ -17,7 +17,7 @@ class dsc_collection::config (
       # as it will identify PowerShell as not installed.
       if $::chocolatey_packages != undef
       {
-        if $::chocolatey_packages =~ /PowerShell 5.0.10514-ProductionPreview/ {
+        if $::chocolatey_packages =~ /PowerShell 5.0/ {
           #Powershell already installed.
           # Disable local refresh mode
           dsc::lcm_config { 'disable lcm':
