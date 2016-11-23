@@ -7,8 +7,6 @@ class dsc_collection::registry (
   $valuestringdata = 'TestData',
   $valuedwordname = 'TestDword',
   $valuedworddata = '100',
-  $valuebinaryname = 'TestBinary',
-  $valuebinarydata = '46000000080000000100000000000000000000000000000000000000',
   $force = true,
   ){
     # Create example registry key and value
@@ -31,14 +29,4 @@ class dsc_collection::registry (
       dsc_force     => $force ,
     }
 
-    # Create example Binary Registry key and value
-
-    dsc_registry { 'RegistryBinaryExample':
-      dsc_ensure    => 'present',
-      dsc_key       => $key,
-      dsc_valuename => $valuebinaryname,
-      dsc_valuedata => $valuebinarydata,
-      dsc_valuetype => 'Binary',
-      dsc_force     => $force,
-    }
 }
